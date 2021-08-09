@@ -89,7 +89,6 @@ class MainWindow(QMainWindow, QSystemTrayIcon):
 
         isnotworking = QMessageBox(self)
         isnotworking.setIcon(QMessageBox.Critical)
-        print(self.SmallText)
 
         if not self.SmallText:
             isnotworking.setInformativeText(f"Small text cannot be nothing.")
