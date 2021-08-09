@@ -13,6 +13,8 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.ConnectButton.clicked.connect(self.connect)
+        self.ui.DisconnectButton.clicked.connect(self.disconnect)
+        self.rpc = None
 
     def get_id(self):
         return str(self.ui.ID_textInput.toPlainText())
@@ -48,7 +50,7 @@ class MainWindow(QMainWindow):
         return str(self.ui.Urltwo_input.toPlainText())
 
     def connect(self):
-        self.id = int(self.get_id())
+        self.id = self.get_id()
         self.details = self.get_details()
         self.state = self.get_state()
         self.LargeKey = self.get_large_key()
@@ -60,6 +62,17 @@ class MainWindow(QMainWindow):
         self.Button2Text = self.get_buttontwo_text()
         self.Button2Url = self.get_buttontwo_url()
         self.ui.DisconnectButton.setStyleSheet(u"background-color: lightGray; font: 22pt \"Segoe UI\";")
+        self.ui.ConnectButton.setStyleSheet(u"background-color: white; font: 22pt \"Segoe UI\";")
+        self.rpc = Presence(self.id)
+        self.rpc.connect()
+
+    def disconnect(self):
+        if self.rpc is not None:
+            self.rpc.close()
+            self.ui.DisconnectButton.setStyleSheet(u"background-color: white; font: 22pt \"Segoe UI\";")
+            self.ui.ConnectButton.setStyleSheet(u"background-color: lightGray; font: 22pt \"Segoe UI\";")
+        else:
+            return
 
 app = QApplication(sys.argv)
 w = MainWindow()
