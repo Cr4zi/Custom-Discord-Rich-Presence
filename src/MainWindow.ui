@@ -40,6 +40,9 @@ font: 22pt &quot;Segoe UI&quot;;</string>
       <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 16pt &quot;Segoe UI&quot;;</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="ConnectButton">
     <property name="geometry">
@@ -98,6 +101,9 @@ font: 22pt &quot;Segoe UI&quot;;</string>
       <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 16pt &quot;Segoe UI&quot;;</string>
+    </property>
    </widget>
    <widget class="QLabel" name="State_label">
     <property name="geometry">
@@ -123,6 +129,9 @@ font: 22pt &quot;Segoe UI&quot;;</string>
       <width>481</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 16pt &quot;Segoe UI&quot;;</string>
     </property>
    </widget>
    <widget class="QLabel" name="Timestamp_label">
@@ -214,6 +223,9 @@ font: 22pt &quot;Segoe UI&quot;;</string>
       <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 16pt &quot;Segoe UI&quot;;</string>
+    </property>
    </widget>
    <widget class="QTextEdit" name="keysmall_input">
     <property name="geometry">
@@ -223,6 +235,9 @@ font: 22pt &quot;Segoe UI&quot;;</string>
       <width>271</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 16pt &quot;Segoe UI&quot;;</string>
     </property>
    </widget>
    <widget class="QLabel" name="Textlarge_label">
@@ -250,6 +265,9 @@ font: 22pt &quot;Segoe UI&quot;;</string>
       <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 16pt &quot;Segoe UI&quot;;</string>
+    </property>
    </widget>
    <widget class="QLabel" name="Textsmall_label">
     <property name="geometry">
@@ -275,6 +293,9 @@ font: 22pt &quot;Segoe UI&quot;;</string>
       <width>271</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 16pt &quot;Segoe UI&quot;;</string>
     </property>
    </widget>
    <widget class="QLabel" name="Buttonone_label">
@@ -334,6 +355,9 @@ font: 22pt &quot;Segoe UI&quot;;</string>
       <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 16pt &quot;Segoe UI&quot;;</string>
+    </property>
    </widget>
    <widget class="QLabel" name="Texttwo_label">
     <property name="geometry">
@@ -360,6 +384,9 @@ font: 22pt &quot;Segoe UI&quot;;</string>
       <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 16pt &quot;Segoe UI&quot;;</string>
+    </property>
    </widget>
    <widget class="QTextEdit" name="Urlone_input">
     <property name="geometry">
@@ -370,6 +397,9 @@ font: 22pt &quot;Segoe UI&quot;;</string>
       <height>41</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">font: 16pt &quot;Segoe UI&quot;;</string>
+    </property>
    </widget>
    <widget class="QTextEdit" name="Urltwo_input">
     <property name="geometry">
@@ -379,6 +409,9 @@ font: 22pt &quot;Segoe UI&quot;;</string>
       <width>271</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 16pt &quot;Segoe UI&quot;;</string>
     </property>
    </widget>
    <widget class="QLabel" name="Urltwo_label">
