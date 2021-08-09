@@ -15,6 +15,8 @@ class MainWindow(QMainWindow):
         self.ui.ConnectButton.clicked.connect(self.connect)
         self.ui.DisconnectButton.clicked.connect(self.disconnect)
         self.rpc = None
+        self.isConnected = False
+        self.ui.Updatepresence_button.clicked.connect(self.update_presence)
 
     def get_id(self):
         return str(self.ui.ID_textInput.toPlainText())
@@ -51,6 +53,25 @@ class MainWindow(QMainWindow):
 
     def connect(self):
         self.id = self.get_id()
+        self.ui.DisconnectButton.setStyleSheet(u"background-color: lightGray; font: 22pt \"Segoe UI\";")
+        self.ui.ConnectButton.setStyleSheet(u"background-color: white; font: 22pt \"Segoe UI\";")
+        self.rpc = Presence(self.id)
+        self.rpc.connect()
+        self.isConnected = True
+
+    def disconnect(self):
+        if self.rpc is not None:
+            self.rpc.close()
+            self.ui.DisconnectButton.setStyleSheet(u"background-color: white; font: 22pt \"Segoe UI\";")
+            self.ui.ConnectButton.setStyleSheet(u"background-color: lightGray; font: 22pt \"Segoe UI\";")
+            self.isConnected = False
+        else:
+            self.ui.DisconnectButton.setStyleSheet(u"background-color: white; font: 22pt \"Segoe UI\";")
+            self.ui.ConnectButton.setStyleSheet(u"background-color: lightGray; font: 22pt \"Segoe UI\";")
+
+    def update_presence(self):
+        if not self.isConnected:
+            return
         self.details = self.get_details()
         self.state = self.get_state()
         self.LargeKey = self.get_large_key()
@@ -61,18 +82,15 @@ class MainWindow(QMainWindow):
         self.Button1Url = self.get_buttonone_url()
         self.Button2Text = self.get_buttontwo_text()
         self.Button2Url = self.get_buttontwo_url()
-        self.ui.DisconnectButton.setStyleSheet(u"background-color: lightGray; font: 22pt \"Segoe UI\";")
-        self.ui.ConnectButton.setStyleSheet(u"background-color: white; font: 22pt \"Segoe UI\";")
-        self.rpc = Presence(self.id)
-        self.rpc.connect()
 
-    def disconnect(self):
-        if self.rpc is not None:
-            self.rpc.close()
-            self.ui.DisconnectButton.setStyleSheet(u"background-color: white; font: 22pt \"Segoe UI\";")
-            self.ui.ConnectButton.setStyleSheet(u"background-color: lightGray; font: 22pt \"Segoe UI\";")
-        else:
-            return
+        button1 = {"label": self.Button1Text, "url": self.Button1Url}
+        button2 = {"label": self.Button2Text, "url": self.Button2Url}
+        
+        self.rpc.update(state=self.state, details=self.details, 
+                        large_image=self.LargeKey, large_text=self.largeText, 
+                        small_image=self.SmallKey, small_text=self.SmallText,
+                        buttons=[button1, button2])
+
 
 app = QApplication(sys.argv)
 w = MainWindow()
