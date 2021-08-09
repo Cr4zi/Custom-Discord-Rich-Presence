@@ -9,22 +9,13 @@ from pypresence import Presence
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
+        self.setToolTip(f'Discord Custom Rich Presence')
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.id = self.get_id()
-        self.details = self.get_details()
-        self.state = self.get_state()
-        self.LargeKey = self.get_large_key()
-        self.largeText = self.get_large_text()
-        self.SmallKey = self.get_small_key()
-        self.SmallText = self.get_small_text()
-        self.Button1Text = self.get_buttonone_text()
-        self.Button1Url = self.get_buttonone_url()
-        self.Button2Text = self.get_buttontwo_text()
-        self.Button2Url = self.get_buttontwo_url()
+        self.ui.ConnectButton.clicked.connect(self.connect)
 
     def get_id(self):
-        return int(self.ui.ID_textInput.toPlainText())
+        return str(self.ui.ID_textInput.toPlainText())
     
     def get_details(self):
         return str(self.ui.Details_textInput.toPlainText())
@@ -55,6 +46,20 @@ class MainWindow(QMainWindow):
     
     def get_buttontwo_url(self):
         return str(self.ui.Urltwo_input.toPlainText())
+
+    def connect(self):
+        self.id = int(self.get_id())
+        self.details = self.get_details()
+        self.state = self.get_state()
+        self.LargeKey = self.get_large_key()
+        self.largeText = self.get_large_text()
+        self.SmallKey = self.get_small_key()
+        self.SmallText = self.get_small_text()
+        self.Button1Text = self.get_buttonone_text()
+        self.Button1Url = self.get_buttonone_url()
+        self.Button2Text = self.get_buttontwo_text()
+        self.Button2Url = self.get_buttontwo_url()
+        self.ui.DisconnectButton.setStyleSheet(u"background-color: lightGray; font: 22pt \"Segoe UI\";")
 
 app = QApplication(sys.argv)
 w = MainWindow()
