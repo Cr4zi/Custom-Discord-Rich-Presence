@@ -6,9 +6,10 @@ from mainwindow import Ui_MainWindow
 from pypresence import Presence
 
 
-class MainWindow(QMainWindow):
+class MainWindow(QMainWindow, QSystemTrayIcon):
     def __init__(self, parent=None):
         super().__init__(parent)
+        QSystemTrayIcon.__init__(self, parent)
         self.setToolTip(f'Custom Discord Rich Presence')
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
