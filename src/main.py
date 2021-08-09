@@ -9,7 +9,7 @@ from pypresence import Presence
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.setToolTip(f'Discord Custom Rich Presence')
+        self.setToolTip(f'Custom Discord Rich Presence')
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.ConnectButton.clicked.connect(self.connect)
@@ -94,5 +94,6 @@ class MainWindow(QMainWindow):
 
 app = QApplication(sys.argv)
 w = MainWindow()
+w.setWindowTitle("Custom Discord Rich Presence")
 w.show()
 app.exec_()
