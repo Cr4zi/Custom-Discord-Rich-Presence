@@ -83,9 +83,37 @@ class MainWindow(QMainWindow):
         self.Button2Text = self.get_buttontwo_text()
         self.Button2Url = self.get_buttontwo_url()
 
-        button1 = {"label": self.Button1Text, "url": self.Button1Url}
-        button2 = {"label": self.Button2Text, "url": self.Button2Url}
-        
+        button1 = {"label": self.Button1Text if self.Button1Text is not None else None, "url": self.Button1Url if self.Button1Url is not None else None}
+        button2 = {"label": self.Button2Text if self.Button2Text is not None else None, "url": self.Button2Url if self.Button2Url is not None else None}
+
+        isnotworking = QMessageBox(self)
+        isnotworking.setIcon(QMessageBox.Critical)
+        print(self.SmallText)
+
+        if not self.SmallText:
+            isnotworking.setInformativeText(f"Small text cannot be nothing.")
+            isnotworking.setWindowTitle("Error")
+            isnotworking.exec_()
+            return
+
+        if not self.largeText:
+            isnotworking.setInformativeText(f"large text cannot be nothing.")
+            isnotworking.setWindowTitle("Error")
+            isnotworking.exec_()
+            return
+
+        if not self.details:
+            isnotworking.setInformativeText(f"Details cannot be nothing.")
+            isnotworking.setWindowTitle("Error")
+            isnotworking.exec_()
+            return
+
+        if not self.state:
+            isnotworking.setInformativeText(f"State cannot be nothing.")
+            isnotworking.setWindowTitle("Error")
+            isnotworking.exec_()
+            return
+
         self.rpc.update(state=self.state, details=self.details, 
                         large_image=self.LargeKey, large_text=self.largeText, 
                         small_image=self.SmallKey, small_text=self.SmallText,
