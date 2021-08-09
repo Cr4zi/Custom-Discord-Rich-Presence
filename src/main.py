@@ -3,6 +3,7 @@ from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 import sys
 from mainwindow import Ui_MainWindow
+from pypresence import Presence
 
 
 class MainWindow(QMainWindow):
