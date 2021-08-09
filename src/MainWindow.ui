@@ -157,7 +157,7 @@ font: 22pt &quot;Segoe UI&quot;;</string>
      <string>Large Image</string>
     </property>
    </widget>
-   <widget class="QLabel" name="Smalimage_label">
+   <widget class="QLabel" name="Smallimage_label">
     <property name="geometry">
      <rect>
       <x>700</x>
