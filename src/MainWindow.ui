@@ -141,54 +141,6 @@ font: 22pt &quot;Segoe UI&quot;;</string>
      <string>Timetamp</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="None_checkbox">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>240</y>
-      <width>91</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 22pt &quot;Segoe UI&quot;;</string>
-    </property>
-    <property name="text">
-     <string>None</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="started_checkbox">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>270</y>
-      <width>331</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 22pt &quot;Segoe UI&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Since custom RP started</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="Localtime_checkbox">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>300</y>
-      <width>331</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 22pt &quot;Segoe UI&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Your local time</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="Largeimage_label">
     <property name="geometry">
      <rect>
@@ -476,6 +428,67 @@ font: 22pt &quot;Segoe UI&quot;;</string>
     <property name="text">
      <string>Update Presence</string>
     </property>
+   </widget>
+   <widget class="QGroupBox" name="Timestamp">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>220</y>
+      <width>501</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>GroupBox</string>
+    </property>
+    <widget class="QRadioButton" name="None_checkbox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 22pt &quot;Segoe UI&quot;;</string>
+     </property>
+     <property name="text">
+      <string>None</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="Started_checkbox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>60</y>
+       <width>331</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 22pt &quot;Segoe UI&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Since custom RP started</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="local_checkbox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>211</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 22pt &quot;Segoe UI&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Your local time</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
